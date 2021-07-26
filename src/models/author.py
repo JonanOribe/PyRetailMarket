@@ -10,12 +10,12 @@ class Author(User):
     def reviews(self):
         return self._reviews
     
-    @email.setter
-    def email(self, new_reviews):
+    @reviews.setter
+    def reviews(self, new_reviews):
         if type(new_reviews) == str:
             self._reviews = new_reviews
         else:
             raise Exception("Invalid value for email")
         
-        def __str__(self):
-            return 'Name: {}, phone: {}, email: {}, birthday: {}, user_type: {}, reviews: {}'.format(self._name,self._phone,self._email,self._birthday,self._user_type,self.reviews)
+    def __str__(self):
+        return 'Name: {}, phone: {}, email: {}, birthday: {}, user_type: {}, reviews: {}'.format(self._name,self._phone,self._email,self._birthday,self._user_type,self.reviews)
